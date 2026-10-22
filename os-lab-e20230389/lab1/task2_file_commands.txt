@@ -1,0 +1,12 @@
+/home/gic-vuon-sethar-tykun/oslab-work/lab1/task2_files
+candle.txt
+river.txt
+This is file candle
+candle.txt
+candle_copy.txt
+river.txt
+candle.txt
+candle_copy.txt
+river_renamed.txt
+candle.txt
+river_renamed.txt
