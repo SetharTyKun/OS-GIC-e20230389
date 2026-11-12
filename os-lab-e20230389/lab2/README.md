@@ -1,4 +1,4 @@
-# Lab 2 Report: Linux Navigation and File Management
+I saved my prediction before the experiment, then corrected it with oslab debrief lab2. I was right about ___, but wrong about ___. I learned that a relative path starts from the folder I am in, so the same path can work in one folder and fail in another.# Lab 2 Report: Linux Navigation and File Management
 
 Student ID: e20230389
 
@@ -21,7 +21,7 @@ Student ID: e20230389
 My file names contain a space, so I wrote `"$file1"` in double quotes. Without quotes, the shell splits the name into two words and `ls` looks for two files that do not exist.
 
 ## Prediction and debrief
-(Write 2 or 3 sentences here: which prediction answers you got right, which you corrected in `oslab debrief lab2`, and what you learned.)
+I saved my prediction before the experiment, then gave the right answer to each question with oslab debrief lab2, so my wrong guesses were corrected. I learned that a relative path starts from the folder I am in (check with pwd), while an absolute path starts from /, and that a file name with a space needs quotes.
 
 ## Evidence
 - `evidence/paths.txt`: my commands, my decision, and my Error and Fix lines
