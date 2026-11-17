@@ -31,3 +31,26 @@
    > **Client:** `socket()` → `connect()` → `send()` / `read()` → `close()`
 
 ---
+## Task 2: POSIX Threads (C)
+
+### Output — Without Mutex (Race Condition) and With Mutex (Correct)
+
+![Threads output](screenshots/task2_threads_output.png)
+
+Without the mutex, the counter came out as 138546 (and 181012, 126509, 249816 in other runs) instead of 400000. With the mutex it was exactly 400000 every time.
+
+### Answers
+
+1. **What is a race condition?**
+   > A race condition happens when several threads read and write the same variable at the same time without coordination, so the result depends on timing. `shared_counter++` is really three steps (read, add, write). Threads interleave these steps and overwrite each other's updates, so many increments are lost.
+
+2. **What does `pthread_mutex_lock()` do?**
+   > It lets only one thread into the protected section at a time. Other threads wait until the owner calls `pthread_mutex_unlock()`. Each `shared_counter++` then finishes completely before the next one begins, so no updates are lost.
+
+3. **Removing `pthread_join()`:**
+   > REPLACE_WITH_WHAT_YOU_SAW
+
+4. **Thread vs Process:**
+   > Threads in one process share the code, global data, heap and open files. Each thread has its own stack, registers and thread ID. Separate processes have separate address spaces, so they share nothing by default.
+
+---
