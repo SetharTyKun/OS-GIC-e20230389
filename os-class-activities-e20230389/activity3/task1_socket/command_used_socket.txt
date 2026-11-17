@@ -1,0 +1,20 @@
+   79  gcc -o server server.c
+   80  gcc -o client client.c
+   81  ls
+   82  ./client
+   83  cd ~/os-gic-e20230389/os-class-activities-e20230389/activity3/task1_socket
+   84  ./server
+   85  clear
+   86  ./server
+   87  ls /mnt/c/Users/ASUS/Pictures/Screenshots
+   88  cp "/mnt/c/Users/ASUS/Pictures/Screenshots/Screenshot 2026-11-17 111711.png" ~/os-gic-e20230389/os-class-activities-e20230389/activity3/screenshots/task1_socket_exchange.png
+   89  ls -l ~/os-gic-e20230389/os-class-activities-e20230389/activity3/screenshots
+   90  ls ~/os-gic-e20230389/os-class-activities-e20230389/activity3/screenshots
+   91  cd ~/os-gic-e20230389/os-class-activities-e20230389/activity3/task1_socket
+   92  ./server > result_server.txt 2>&1 &
+   93  sleep 1
+   94  ./client > result_client.txt 2>&1
+   95  wait
+   96  cat result_server.txt result_client.txt > result_socket.txt
+   97  cat result_socket.txt
+   98  history | tail -n 20 > command_used_socket.txt
