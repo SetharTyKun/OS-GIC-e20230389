@@ -48,7 +48,7 @@ Without the mutex, the counter came out as 138546 (and 181012, 126509, 249816 in
    > It lets only one thread into the protected section at a time. Other threads wait until the owner calls `pthread_mutex_unlock()`. Each `shared_counter++` then finishes completely before the next one begins, so no updates are lost.
 
 3. **Removing `pthread_join()`:**
-   > YOUR OBSERVATION HERE
+   > Without pthread_join(), main did not wait for the threads. It printed "All threads completed." immediately, with a counter of only 40879 instead of 400000. Only threads 1 to 3 had printed "starting work..." and none printed "done.", because main returned and the process ended while the threads were still running.
 
 4. **Thread vs Process:**
    > Threads in one process share the code, global data, heap and open files. Each thread has its own stack, registers and thread ID. Separate processes have separate address spaces, so they share nothing by default.
