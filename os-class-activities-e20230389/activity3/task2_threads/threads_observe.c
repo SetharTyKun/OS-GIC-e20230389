@@ -9,7 +9,7 @@
 void *worker(void *arg) {
     int id = *(int *)arg;
     printf("Thread %d (TID: %lu): sleeping 60 seconds...\n", id, (unsigned long)pthread_self());
-    sleep(60);
+    sleep(180);
     printf("Thread %d: done.\n", id);
     return NULL;
 }

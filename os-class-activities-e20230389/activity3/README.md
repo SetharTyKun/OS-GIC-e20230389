@@ -77,3 +77,31 @@ ThreadDemo: Alpha, Beta and Gamma (thread IDs 34, 35, 36) printed their counts i
    > It reuses a fixed number of threads instead of creating a new thread for every task, which saves the cost of creating threads. It limits how many run at once, queues extra tasks, and manages shutdown and results in one place. With many tasks, this avoids running out of memory or overloading the CPU.
 
 ---
+
+## Task 4: Observing Threads
+
+### Linux: ps -eLf and /proc output (PID 10706)
+
+```
+asus       10706    9405   10706  0    5 12:01 pts/0    00:00:00 ./threads_observe
+asus       10706    9405   10707  0    5 12:01 pts/0    00:00:00 ./threads_observe
+asus       10706    9405   10708  0    5 12:01 pts/0    00:00:00 ./threads_observe
+asus       10706    9405   10709  0    5 12:01 pts/0    00:00:00 ./threads_observe
+asus       10706    9405   10710  0    5 12:01 pts/0    00:00:00 ./threads_observe
+    PID    SPID TTY          TIME CMD
+  10706   10706 pts/0    00:00:00 threads_observe
+  10706   10707 pts/0    00:00:00 threads_observe
+  10706   10708 pts/0    00:00:00 threads_observe
+  10706   10709 pts/0    00:00:00 threads_observe
+  10706   10710 pts/0    00:00:00 threads_observe
+--- /proc/10706/task/ listing ---
+10706
+10707
+10708
+10709
+10710
+```
+
+## Reflection
+
+> I found it interesting that the race condition gave a different wrong answer on every run, while the mutex gave exactly 400000. Seeing threads in ps, /proc and htop showed me that the kernel treats each thread as its own schedulable task, even though they share one process. This helps me remember to protect shared data with a mutex and to wait for threads with join.

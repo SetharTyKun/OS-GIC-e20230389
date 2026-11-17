@@ -1,0 +1,17 @@
+asus       10706    9405   10706  0    5 12:01 pts/0    00:00:00 ./threads_observe
+asus       10706    9405   10707  0    5 12:01 pts/0    00:00:00 ./threads_observe
+asus       10706    9405   10708  0    5 12:01 pts/0    00:00:00 ./threads_observe
+asus       10706    9405   10709  0    5 12:01 pts/0    00:00:00 ./threads_observe
+asus       10706    9405   10710  0    5 12:01 pts/0    00:00:00 ./threads_observe
+    PID    SPID TTY          TIME CMD
+  10706   10706 pts/0    00:00:00 threads_observe
+  10706   10707 pts/0    00:00:00 threads_observe
+  10706   10708 pts/0    00:00:00 threads_observe
+  10706   10709 pts/0    00:00:00 threads_observe
+  10706   10710 pts/0    00:00:00 threads_observe
+--- /proc/10706/task/ listing ---
+10706
+10707
+10708
+10709
+10710
