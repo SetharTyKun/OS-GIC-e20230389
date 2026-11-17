@@ -54,3 +54,26 @@ Without the mutex, the counter came out as 138546 (and 181012, 126509, 249816 in
    > Threads in one process share the code, global data, heap and open files. Each thread has its own stack, registers and thread ID. Separate processes have separate address spaces, so they share nothing by default.
 
 ---
+## Task 3: Java Multithreading
+
+### ThreadDemo, RunnableDemo and PoolDemo Output
+
+![Java threading](screenshots/task3_java_output.png)
+
+ThreadDemo: Alpha, Beta and Gamma (thread IDs 34, 35, 36) printed their counts interleaved. RunnableDemo showed the same with named threads (downloader, processor, uploader). PoolDemo used only pool-1-thread-1 and pool-1-thread-2, running the 6 tasks two at a time.
+
+### Answers
+
+1. **Thread vs Runnable:**
+   > Extending `Thread` makes the task and the thread one class, and uses up Java's single inheritance, so the class cannot extend anything else. Implementing `Runnable` only describes the work, and any `Thread` or thread pool can run it. I prefer `Runnable` in most cases, because it separates the task from how it is run and allows the class to extend another class.
+
+2. **Pool size limiting concurrency:**
+   > `newFixedThreadPool(2)` creates only two worker threads. The six tasks are put in a queue, and each worker takes the next task when it finishes one. That is why the output shows tasks 1 and 2, then 3 and 4, then 5 and 6, always on the same two threads.
+
+3. **thread.join() in Java:**
+   > `join()` makes the calling thread wait until the other thread has finished. When I removed the `join()` calls, REPLACE_WITH_WHAT_YOU_SAW
+
+4. **ExecutorService advantages:**
+   > It reuses a fixed number of threads instead of creating a new thread for every task, which saves the cost of creating threads. It limits how many run at once, queues extra tasks, and manages shutdown and results in one place. With many tasks, this avoids running out of memory or overloading the CPU.
+
+---

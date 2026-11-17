@@ -1,0 +1,30 @@
+            System.out.printf("Task %d completed on thread %s%n",
+                taskId, Thread.currentThread().getName());
+        }
+    }
+
+    public static void main(String[] args) throws InterruptedException {
+        System.out.println("Main: creating thread pool with 2 threads for 6 tasks\n");
+
+        ExecutorService pool = Executors.newFixedThreadPool(2);
+
+        for (int i = 1; i <= 6; i++) {
+            pool.submit(new Task(i));
+        }
+
+        pool.shutdown();
+        pool.awaitTermination(30, TimeUnit.SECONDS);
+
+        System.out.println("\nMain: all tasks completed. Pool shut down.");
+    }
+}
+EOF
+
+   74  ls
+   75  javac ThreadDemo.java RunnableDemo.java PoolDemo.java
+   76  ls
+   77  java ThreadDemo > result_thread_demo.txt 2>&1
+   78  java RunnableDemo > result_runnable_demo.txt 2>&1
+   79  java PoolDemo > result_pool_demo.txt 2>&1
+   80  cat result_thread_demo.txt result_runnable_demo.txt result_pool_demo.txt
+   81  history | tail -n 30 > command_used_java.txt
