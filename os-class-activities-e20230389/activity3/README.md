@@ -48,7 +48,7 @@ Without the mutex, the counter came out as 138546 (and 181012, 126509, 249816 in
    > It lets only one thread into the protected section at a time. Other threads wait until the owner calls `pthread_mutex_unlock()`. Each `shared_counter++` then finishes completely before the next one begins, so no updates are lost.
 
 3. **Removing `pthread_join()`:**
-   > REPLACE_WITH_WHAT_YOU_SAW
+   > YOUR OBSERVATION HERE
 
 4. **Thread vs Process:**
    > Threads in one process share the code, global data, heap and open files. Each thread has its own stack, registers and thread ID. Separate processes have separate address spaces, so they share nothing by default.
@@ -71,7 +71,7 @@ ThreadDemo: Alpha, Beta and Gamma (thread IDs 34, 35, 36) printed their counts i
    > `newFixedThreadPool(2)` creates only two worker threads. The six tasks are put in a queue, and each worker takes the next task when it finishes one. That is why the output shows tasks 1 and 2, then 3 and 4, then 5 and 6, always on the same two threads.
 
 3. **thread.join() in Java:**
-   > `join()` makes the calling thread wait until the other thread has finished. When I removed the `join()` calls, REPLACE_WITH_WHAT_YOU_SAW
+   > `join()` makes the calling thread wait until the other thread has finished. When I removed the `join()` calls, main printed "Main thread: all threads finished." almost immediately, after only the first counts of Alpha and Beta, because it no longer waited. The threads kept running and finished afterwards, so the message was misleading.
 
 4. **ExecutorService advantages:**
    > It reuses a fixed number of threads instead of creating a new thread for every task, which saves the cost of creating threads. It limits how many run at once, queues extra tasks, and manages shutdown and results in one place. With many tasks, this avoids running out of memory or overloading the CPU.
