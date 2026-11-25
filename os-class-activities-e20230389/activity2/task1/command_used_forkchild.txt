@@ -1,0 +1,20 @@
+  598  mkdir C:\images\activity2
+  599  history | tail -n 20 > command_used_shm.txt
+  600  ls
+  601  rmdir 'C:imagesactivity2'
+  602  mv command_used_shm.txt ../task3_shm/
+  603  ls
+  604  ls ../task3_shm
+  605  clear; gcc -o sender sender.c -lrt && gcc -o receiver receiver.c -lrt && ./sender && ./receiver > result-mq-ipc.txt; cat result-mq-ipc.txt
+  606  ./receiver
+  607  history | tail -n 20 > command_used_mq.txt
+  608  ls
+  609  cd ~/os-gic-e20230389/os-class-activities-e20230389/activity2/task1
+  610  clear; gcc -o forkchild forkchild.c && ./forkchild > result_forkchild.txt 2>&1
+  611  ps -ef --forest | grep forkchild
+  612  cat result_forkchild.txt
+  613  history | tail -n 20 > command_used_forkchild.txt
+  614  cd ~/os-gic-e20230389/os-class-activities-e20230389/activity2/task1
+  615  clear; gcc -o forkchild forkchild.c && stdbuf -oL ./forkchild > result_forkchild.txt 2>&1
+  616  cat result_forkchild.txt
+  617  history | tail -n 20 > command_used_forkchild.txt

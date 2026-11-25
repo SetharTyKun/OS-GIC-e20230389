@@ -1,0 +1,20 @@
+  588  grep -rn "Please ask" . ; echo "grep finished"
+  589  head -n 1 task1/forkchild.c task3_shm/shm-producer.c task3_shm/shm-consumer.c task4_mq/sender.c task4_mq/receiver.c
+  590  cd ~/os-gic-e20230389/os-class-activities-e20230389/activity2/task3_shm
+  591  clear; gcc -o shm-producer shm-producer.c -lrt && gcc -o shm-consumer shm-consumer.c -lrt && ./shm-producer && ./shm-consumer > result-shm-ipc.txt; cat result-shm-ipc.txt
+  592  ./shm-consumer
+  593  history | tail -n 20 > command_used_shm.txt
+  594  ls
+  595  cd ~/os-gic-e20230389/os-class-activities-e20230389/activity2/task4_mq
+  596  clear; gcc -o sender sender.c -lrt && gcc -o receiver receiver.c -lrt && ./sender && ./receiver > result-mq-ipc.txt; cat result-mq-ipc.txt
+  597  ./receiver
+  598  mkdir C:\images\activity2
+  599  history | tail -n 20 > command_used_shm.txt
+  600  ls
+  601  rmdir 'C:imagesactivity2'
+  602  mv command_used_shm.txt ../task3_shm/
+  603  ls
+  604  ls ../task3_shm
+  605  clear; gcc -o sender sender.c -lrt && gcc -o receiver receiver.c -lrt && ./sender && ./receiver > result-mq-ipc.txt; cat result-mq-ipc.txt
+  606  ./receiver
+  607  history | tail -n 20 > command_used_mq.txt
