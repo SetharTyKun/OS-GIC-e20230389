@@ -1,0 +1,9 @@
+
+=== NEW FILE USING THE OLD NAME ===
+19269423 -rw-rw-r-- 2 gic-vuon-sethar-tykun gic-vuon-sethar-tykun 12 Nov 17 16:31 garden-draft.txt
+19269423 -rw-rw-r-- 2 gic-vuon-sethar-tykun gic-vuon-sethar-tykun 12 Nov 17 16:31 garden-hard.txt
+19269437 lrwxrwxrwx 1 gic-vuon-sethar-tykun gic-vuon-sethar-tykun 10 Nov 17 16:40 garden-soft.txt -> garden.txt
+19269439 -rw-rw-r-- 1 gic-vuon-sethar-tykun gic-vuon-sethar-tykun 12 Nov 17 16:41 garden.txt
+garden.txt: version 218
+hard: version 192
+soft: version 218

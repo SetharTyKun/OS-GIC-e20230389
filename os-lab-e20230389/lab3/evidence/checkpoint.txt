@@ -1,0 +1,12 @@
+.:
+total 8
+19269442 drwxrwxr-x 2 gic-vuon-sethar-tykun gic-vuon-sethar-tykun 4096 Nov 17 16:55 links
+19269443 -rw-rw-r-- 2 gic-vuon-sethar-tykun gic-vuon-sethar-tykun   23 Nov 17 16:47 panda-final.txt
+
+links:
+total 4
+19269444 lrwxrwxrwx 1 gic-vuon-sethar-tykun gic-vuon-sethar-tykun 18 Nov 17 16:55 first.txt -> ../panda-final.txt
+19269443 -rw-rw-r-- 2 gic-vuon-sethar-tykun gic-vuon-sethar-tykun 23 Nov 17 16:47 hard.txt
+19269445 lrwxrwxrwx 1 gic-vuon-sethar-tykun gic-vuon-sethar-tykun  9 Nov 17 16:47 second.txt -> first.txt
+checkpoint river panda
+checkpoint river panda

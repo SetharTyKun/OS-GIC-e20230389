@@ -1,0 +1,6 @@
+<notes/garden12.txt>
+<notes/garden1.txt>
+<notes/garden2.txt>
+<notes/garden1.txt>
+<notes/garden2.txt>
+<notes/*.txt>

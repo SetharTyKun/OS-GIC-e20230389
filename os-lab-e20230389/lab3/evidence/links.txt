@@ -1,0 +1,27 @@
+
+=== BEFORE RENAME ===
+19269423 -rw-rw-r-- 2 gic-vuon-sethar-tykun gic-vuon-sethar-tykun 12 Nov 17 16:31 garden-hard.txt
+19269437 lrwxrwxrwx 1 gic-vuon-sethar-tykun gic-vuon-sethar-tykun 10 Nov 17 16:40 garden-soft.txt -> garden.txt
+19269423 -rw-rw-r-- 2 gic-vuon-sethar-tykun gic-vuon-sethar-tykun 12 Nov 17 16:31 garden.txt
+hard: version 192
+soft: version 192
+stored target: garden.txt
+
+=== AFTER RENAME, BEFORE REPAIR ===
+19269423 -rw-rw-r-- 2 gic-vuon-sethar-tykun gic-vuon-sethar-tykun 12 Nov 17 16:31 garden-draft.txt
+19269423 -rw-rw-r-- 2 gic-vuon-sethar-tykun gic-vuon-sethar-tykun 12 Nov 17 16:31 garden-hard.txt
+19269437 lrwxrwxrwx 1 gic-vuon-sethar-tykun gic-vuon-sethar-tykun 10 Nov 17 16:40 garden-soft.txt -> garden.txt
+hard: version 192
+stored target: garden.txt
+soft: cat: garden-soft.txt: No such file or directory
+
+=== AFTER REPAIR ===
+19269423 -rw-rw-r-- 2 gic-vuon-sethar-tykun gic-vuon-sethar-tykun 12 Nov 17 16:31 garden-draft.txt
+19269423 -rw-rw-r-- 2 gic-vuon-sethar-tykun gic-vuon-sethar-tykun 12 Nov 17 16:31 garden-hard.txt
+19269437 lrwxrwxrwx 1 gic-vuon-sethar-tykun gic-vuon-sethar-tykun 16 Nov 17 16:42 garden-soft.txt -> garden-draft.txt
+stored target: garden-draft.txt
+hard: version 192
+soft: version 192
+
+
+Decision: I stored a relative target (garden-draft.txt) because the link is read from the folder that holds it, so the link keeps working if I move the whole folder. An absolute path would break if the folder was moved, because it would still point to the old location.
